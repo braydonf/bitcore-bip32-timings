@@ -11,13 +11,13 @@ var work_remainder = number_of_keys - ( work_size * number_of_workers );
 var startx = (new Date).getTime();
 
 bitcore = require('bitcore');
-BIP32 = bitcore.BIP32;
+HierarchicalKey = bitcore.HierarchicalKey;
 
-var bip32 = new BIP32(knownMasterPrivateKey);
+var hierarchical_key = new HierarchicalKey(knownMasterPrivateKey);
 
 var private_keys = [];
 for (var i=0;i<number_of_keys;i++) {
-    private_keys.push(bip32.derive('m/0/3/'+i).extendedPrivateKeyString());
+    private_keys.push(hierarchical_key.derive('m/0/3/'+i).extendedPrivateKeyString());
 }
 
 var diffx = (new Date).getTime() - startx;
@@ -58,5 +58,5 @@ for (var i=0;i<number_of_workers;i++){
 //  4. /bitcore/browser/vendor/eckey.js : line 53 : getPubPoint
 //  3. /bitcore/browser/vendor/eckey.js : line 45 : getPub
 //  2. /bitcore/lib/browser/Key.js : line 88 : regenerateSync
-//  1. /bitcore/lib/BIP32.js : line 281 : deriveChild
+//  1. /bitcore/lib/HierarchicalKey.js : line 281 : deriveChild
 
