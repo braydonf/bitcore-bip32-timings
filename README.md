@@ -1,7 +1,7 @@
 Bitcore BIP32 Timings
 =====================
 
-These timings were done for Bitcore v0.1.16 ( https://github.com/bitpay/bitcore ) using the following:
+These timings were done for Bitcore v0.1.19 ( https://github.com/bitpay/bitcore ) using the following:
 
 1. Building browser bundle using command 'node /bitcore/browser/build.js -a'
 2. Copied bundle.js from /bitcore/browser/bundle.js to this directory
